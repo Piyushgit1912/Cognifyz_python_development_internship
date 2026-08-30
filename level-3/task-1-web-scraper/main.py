@@ -1,13 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
-def scrape_data(url: str):
-    # TODO: Fetch URL content using requests and parse using BeautifulSoup
-    pass
-
 def main():
-    # TODO: Set target URL, run scraper, and display extracted items
-    pass
+    url = 'https://quotes.toscrape.com/'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    for quote in soup.find_all('span', class_='text')[:5]:
+        print('-', quote.text)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

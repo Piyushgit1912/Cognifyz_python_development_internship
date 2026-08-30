@@ -1,13 +1,10 @@
 import os
-import shutil
-
-def organize_directory(directory_path: str):
-    # TODO: Scan directory and organize files based on extensions (images, docs, code, etc.)
-    pass
 
 def main():
-    # TODO: Execute file management or automation script
-    pass
+    print('Scanning current directory for automation...')
+    for root, dirs, files in os.walk('.'):
+        print(f'Directory: {root} contains {len(files)} files.')
+        break
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
